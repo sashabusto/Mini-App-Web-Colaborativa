@@ -43,8 +43,8 @@ try {
     
     $visitas = [];
     while ($fila = $result->fetch_assoc()) {
-        $visitas[] = $fila;
-    }
+    $visitas[] = $fila; 
+}
 
     echo json_encode($visitas);
     

@@ -9,7 +9,6 @@ $dni = $_POST['dni'];
 $hora_salida = $_POST['hora_salida'];
 $fecha_salida = date("Y-m-d");
 
-// Actualizamos el último registro con ese DNI que tenga hora de salida NULL
 $sql = "UPDATE visitas 
         SET fecha_salida = '$fecha_salida', hora_salida = '$hora_salida'
         WHERE DNI = '$dni' AND fecha_salida IS NULL
@@ -17,9 +16,10 @@ $sql = "UPDATE visitas
         LIMIT 1";
 
 if ($conexion->query($sql) === TRUE) {
-    echo "Salida registrada correctamente.";
+    header("Location: /visitas_edificio/index.html");
+    exit();
 } else {
-    echo "Error: " . $conexion->error;
+    echo "Error: " . $sql . "<br>" . $conexion->error;
 }
 
 $conexion->close();
