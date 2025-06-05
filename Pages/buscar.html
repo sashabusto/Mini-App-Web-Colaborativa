@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buscar Visitas</title>
+  <link rel="stylesheet" href="css/buscar.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h1>Buscar Visitas</h1>
+
+    <!-- Filtros -->
+    <div class="filtros">
+      <input type="text" id="filtro-persona" placeholder="Buscar por DNI o Apellido..." />
+      <input type="date" id="filtro-fecha" />
+      <button onclick="buscarVisitas()">Buscar</button>
+    </div>
+
+    <!-- Resultados -->
+    <div id="resultados">
+      <!-- Aquí se agregan las tarjetas por JS -->
+    </div>
+  </div>
+
+  <script src="../js/buscar.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+/* Fuente general y fondo */
+body {
+  font-family: 'Bree Serif', serif;
+  background: linear-gradient(to bottom right, rgb(216, 183, 206));
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Contenedor principal */
+.container {
+  background-color: rgb(113, 99, 116);
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 500px;
+  align-items: center;
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+/* Campos del formulario */
+.formulario .campo {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario label {
+  margin-bottom: 0.3rem;
+  color: #ffffff;
+}
+
+.formulario input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Botón principal */
+.botones button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  background-color: rgb(194, 148, 178);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.botones button:hover {
+  background-color: rgb(132, 90, 117);
+}
+
+/* Botón de registrar salida */
+.salida-boton {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.salida-boton button {
+  background-color: rgb(190, 148, 194);
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  width: 100%;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.salida-boton button:hover {
+  background-color: rgb(118, 90, 120);
+}
+
+.decor {
+  position: absolute;
+  background-color: rgb(255, 195, 234);
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.decor-top-left {
+  width: 300px;
+  height: 300px;
+  top: -40px;
+  left: -40px;
+}
+
+.decor-top-left-2 {
+  width: 300px;
+  height: 300px;
+  top: -120px;
+  left: 130px;
+}
+
+/* Esquinas abajo a la derecha */
+.decor-bottom-right {
+  width: 300px;
+  height: 300px;
+  bottom: -40px;
+  right: -40px;
+}
+
+.decor-bottom-right-2 {
+  width: 300px;
+  height: 300px;
+  bottom: -120px;
+  right: 130px;
+}

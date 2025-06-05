@@ -1,0 +1,89 @@
+/* Fondo general */
+.inicio-body {
+  background-color: rgb(216, 183, 206);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Bree Serif', serif;
+  margin: 0;
+}
+
+/* Contenedor principal */
+.inicio-box {
+  background-color: rgb(113, 99, 116);
+  border-radius: 20px;
+  padding: 40px 60px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 1200px;
+}
+
+/* Título */
+.inicio-titulo {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* Botones */
+.inicio-botones {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn-inicio {
+  background-color: rgb(255, 195, 234);
+  color: black;
+  text-decoration: none;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-inicio:hover {
+  background-color: rgb(248, 174, 223);
+  cursor: pointer;
+}
+
+.decor {
+  position: absolute;
+  background-color: rgb(255, 195, 234);
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+/* Esquinas arriba a la izquierda */
+.decor-top-left {
+  width: 300px;
+  height: 300px;
+  top: -40px;
+  left: -40px;
+}
+
+.decor-top-left-2 {
+  width: 300px;
+  height: 300px;
+  top: -120px;
+  left: 130px;
+}
+
+/* Esquinas abajo a la derecha */
+.decor-bottom-right {
+  width: 300px;
+  height: 300px;
+  bottom: -40px;
+  right: -40px;
+}
+
+.decor-bottom-right-2 {
+  width: 300px;
+  height: 300px;
+  bottom: -120px;
+  right: 130px;
+}
+

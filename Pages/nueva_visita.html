@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link rel="stylesheet" href="../css/nuevavisita.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Registro</h1>
+    <form action="../insertar_visitas.php" method="post" class="formulario">
+      <div class="campo">
+        <label for="nombre">Nombre: </label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+      <div class="campo">
+        <label for="apellido">Apellido: </label>
+        <input type="text" id="apellido" name="apellido" required>
+      </div>
+      <div class="campo">
+        <label for="dni">DNI: </label>
+        <input type="number" id="dni" name="dni" required>
+      </div>
+      <div class="campo">
+        <label for="motivo-visita">Motivo de visita: </label>
+        <input type="text" id="motivo-visita" name="motivo" required>
+      </div>
+      <div class="campo">
+        <label for="persona-visita">Persona a la que visita: </label>
+        <input type="text" id="persona-visita" name="persona_visita" required>
+      </div>
+      <div class="campo">
+        <label for="hora-ingreso">Hora de ingreso: </label>
+        <input type="datetime-local" id="hora-ingreso" name="hora_ingreso" required>
+      </div>
+      <div class="botones">
+        <button type="submit">Registrar visita</button>
+      </div>
+    </form>
+
+    <a href="salida.html" class="salida-boton">
+      <button type="button">Registrar salida</button>
+    </a>
+  </div>
+  <div class="decor decor-top-left"></div>
+<div class="decor decor-top-left-2"></div>
+
+<div class="decor decor-bottom-right"></div>
+<div class="decor decor-bottom-right-2"></div>
+</body>
+
+</html>
