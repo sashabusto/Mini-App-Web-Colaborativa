@@ -19,6 +19,11 @@
   width: 1200px;
 }
 
+.Login{
+  color:white;
+  height: 50px;
+  right: 50px;
+} 
 /* Título */
 .inicio-titulo {
   color: white;

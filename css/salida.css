@@ -44,7 +44,12 @@ input[type="time"] {
   font-size: 1rem;
 }
 
+a{
+  color:white;
+}
 button {
+  width: 100%;
+  margin:5px;
   padding: 12px;
   border-radius: 8px;
   border: none;

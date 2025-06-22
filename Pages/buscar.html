@@ -8,6 +8,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <script>
+    const nombre = localStorage.getItem('nombre');
+    const apellido = localStorage.getItem('apellido');
+    const dni = localStorage.getItem('dni');
+
+    if (!nombre || !apellido || !dni) {
+      alert("Debés iniciar sesión para acceder.");
+      window.location.href = "login.html";
+    }
+  </script>
   <div class="decor decor-top-left"></div>
 <div class="decor decor-top-left-2"></div>
 <div class="decor decor-top-left-3"></div>

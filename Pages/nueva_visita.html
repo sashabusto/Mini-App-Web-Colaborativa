@@ -11,6 +11,16 @@
 </head>
 
 <body>
+  <script>
+    const nombre = localStorage.getItem('nombre');
+    const apellido = localStorage.getItem('apellido');
+    const dni = localStorage.getItem('dni');
+
+    if (!nombre || !apellido || !dni) {
+      alert("Debés iniciar sesión para acceder.");
+      window.location.href = "login.html";
+    }
+  </script>
   <div class="container">
     <h1>Registro</h1>
     <form action="../insertar_visitas.php" method="post" class="formulario">
@@ -40,12 +50,14 @@
       </div>
       <div class="botones">
         <button type="submit">Registrar visita</button>
+        <button >
+          <a href="../index.html" >Inicio</a>
+        </button>
+         
       </div>
     </form>
 
-    <a href="salida.html" class="salida-boton">
-      <button type="button">Registrar salida</button>
-    </a>
+    
   </div>
   <div class="decor decor-top-left"></div>
 <div class="decor decor-top-left-2"></div>
