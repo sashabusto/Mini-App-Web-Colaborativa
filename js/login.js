@@ -4,9 +4,10 @@ document.getElementById('form-login').addEventListener('submit', async function(
   const nombre = document.getElementById('nombre').value.trim().toLowerCase();
   const apellido = document.getElementById('apellido').value.trim().toLowerCase();
   const dni = document.getElementById('dni').value.trim();
+  const dniRepetir = document.getElementById('dni_repetir').value.trim();
 
-  // Validaciones en frontend
-  if (!nombre || !apellido || !dni) {
+  // Validaciones 
+  if (!nombre || !apellido || !dni || !dniRepetir) {
     alert('Por favor, completá todos los campos.');
     return;
   }
@@ -16,13 +17,18 @@ document.getElementById('form-login').addEventListener('submit', async function(
     return;
   }
 
+  if (dni !== dniRepetir) {
+    alert('Los DNI no coinciden. Por favor, revisá.');
+    return;
+  }
+
   if (!/^[a-záéíóúñü\s]+$/i.test(nombre) || !/^[a-záéíóúñü\s]+$/i.test(apellido)) {
     alert('El nombre y apellido solo deben contener letras y espacios.');
     return;
   }
 
   try {
-    const response = await fetch('../login.php', {
+    const response = await fetch('../php/login.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ nombre, apellido, dni })
@@ -39,7 +45,6 @@ document.getElementById('form-login').addEventListener('submit', async function(
       alert(data.error || 'No estás autorizado para ingresar.');
       window.location.href = 'login.html';
     }
-
   } catch (error) {
     console.error('Error en la solicitud:', error);
     alert('Hubo un problema al conectar con el servidor.');

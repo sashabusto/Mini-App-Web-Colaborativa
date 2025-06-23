@@ -18,7 +18,6 @@ try {
     $types = "";
 
     if (!empty($persona)) {
-        // Convertir DNI a texto
         $sql .= " AND (CAST(DNI AS CHAR) LIKE ? OR Apellido LIKE ?)";
         $searchTerm = "%$persona%";
         $params[] = $searchTerm;
