@@ -6,13 +6,13 @@ if ($conexion->connect_error) {
     exit;
 }
 $data = json_decode(file_get_contents('php://input'), true);
-$id = isset($data['id']) ? intval($data['id']) : 0;
-if ($id <= 0) {
+$ID = isset($data['ID']) ? intval($data['ID']) : 0;
+if ($ID <= 0) {
     echo json_encode(['exito' => false, 'error' => 'ID inválido']);
     exit;
 }
-$stmt = $conexion->prepare("DELETE FROM visitas WHERE id = ?");
-$stmt->bind_param("i", $id);
+$stmt = $conexion->prepare("DELETE FROM visitas WHERE ID = ?");
+$stmt->bind_param("i", $ID);
 if ($stmt->execute()) {
     echo json_encode(['exito' => true]);
 } else {

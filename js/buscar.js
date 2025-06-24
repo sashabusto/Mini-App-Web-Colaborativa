@@ -2,7 +2,7 @@ function buscarVisitas() {
   const persona = document.getElementById("filtro-persona").value;
   const fecha = document.getElementById("filtro-fecha").value;
 
-  let url = "../php/buscar.php?";
+  let url = "/visitas_edificio/php/buscar.php?";
   const params = new URLSearchParams();
 
   if (persona) params.append('persona', persona);
@@ -23,6 +23,19 @@ function buscarVisitas() {
     });
 }
 
+function formatearFecha(fecha, hora) {
+  const f = fecha ? new Date(fecha + 'T' + (hora || '00:00:00')) : null;
+  if (!f || isNaN(f)) return 'Fecha inválida';
+  
+  return f.toLocaleString('es-AR', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+}
+
 function mostrarResultados(visitas) {
   const contenedor = document.getElementById("resultados");
   contenedor.innerHTML = "";
@@ -31,6 +44,7 @@ function mostrarResultados(visitas) {
     contenedor.innerHTML = "<p>No se encontraron visitas.</p>";
     return;
   }
+  console.log("Visitas recibidas:", visitas);
 
   visitas.forEach(visita => {
     const div = document.createElement("div");
@@ -46,35 +60,39 @@ function mostrarResultados(visitas) {
         ${visita.hora_salida ? 'Salió' : 'Presente'}
       </div>
       <div class="acciones">
-        <button class="btn-editar" data-id="${visita.id}">Editar</button>
-        <button class="btn-eliminar" data-id="${visita.id}">Eliminar</button>
+        <button class="btn-editar" data-id="${visita.ID}">Editar</button>
+        <button class="btn-eliminar" data-id="${visita.ID}">Eliminar</button>
       </div>
     `;
+    console.log("Visita individual:", visita);
+
     contenedor.appendChild(div);
   });
+  
 //botones
-  document.querySelectorAll('.btn-editar').forEach(boton => {
-    boton.addEventListener('click', function() {
-      const id = this.getAttribute('data-id');
-      window.location.href = `../Pages/editar.html?id=${id}`;
-    });
+ document.querySelectorAll('.btn-editar').forEach(boton => {
+  boton.addEventListener('click', function () {
+    const ID = this.getAttribute('data-id');
+    console.log("📌 ID al hacer clic en editar:", ID); // <-- este log es CLAVE
+    window.location.href = `../Pages/editar.html?ID=${ID}`;
   });
+});
 
   document.querySelectorAll('.btn-eliminar').forEach(boton => {
     boton.addEventListener('click', function() {
-      const id = this.getAttribute('data-id');
+      const ID = this.getAttribute('data-id');
       if (confirm("¿Querés eliminar este registro?")) {
-        eliminarRegistro(id);
+        eliminarRegistro(ID);
       }
     });
   });
 }
 
-function eliminarRegistro(id) {
+function eliminarRegistro(ID) {
   fetch('/visitas_edificio/php/eliminar.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ id })
+    body: JSON.stringify({ ID })
   })
   .then(res => {
     if (!res.ok) throw new Error(`Error HTTP: ${res.status}`);
