@@ -1,12 +1,11 @@
 <?php
-// Conexión a la base de datos
 $conexion = new mysqli("localhost", "root", "", "visitas_edificio");
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
 
-// Obtener datos del formulario
+// Obtener datos
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 $dni = $_POST['dni'];
@@ -21,7 +20,7 @@ $sql = "INSERT INTO visitas (Nombre, Apellido, DNI, Motivo, Persona_visitada, fe
 
 if ($conexion->query($sql) === TRUE) {
     // Redirigir al index.html si todo sale bien
-    header("Location: index.html");
+    header("Location: /visitas_edificio/index.html");
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conexion->error;

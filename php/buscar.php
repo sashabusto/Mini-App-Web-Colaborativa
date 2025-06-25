@@ -13,12 +13,11 @@ try {
     $persona = isset($_GET['persona']) ? $_GET['persona'] : '';
     $fecha = isset($_GET['fecha']) ? $_GET['fecha'] : '';
 
-    $sql = "SELECT * FROM visitas WHERE 1=1";
+    $sql = "SELECT ID AS ID, DNI, Nombre, Apellido, Persona_visitada, Motivo, fecha_ingreso, hora_ingreso, fecha_salida, hora_salida FROM visitas WHERE 1=1";
     $params = [];
     $types = "";
 
     if (!empty($persona)) {
-        // Convertir DNI a texto
         $sql .= " AND (CAST(DNI AS CHAR) LIKE ? OR Apellido LIKE ?)";
         $searchTerm = "%$persona%";
         $params[] = $searchTerm;

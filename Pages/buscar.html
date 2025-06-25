@@ -8,6 +8,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <script>
+    const nombre = localStorage.getItem('nombre');
+    const apellido = localStorage.getItem('apellido');
+    const dni = localStorage.getItem('dni');
+
+    if (!nombre || !apellido || !dni) {
+      alert("Debés iniciar sesión para acceder.");
+      window.location.href = "login.html";
+    }
+  </script>
   <div class="decor decor-top-left"></div>
 <div class="decor decor-top-left-2"></div>
 <div class="decor decor-top-left-3"></div>
@@ -17,19 +27,22 @@
   <div class="container">
     <h1>Buscar Visitas</h1>
 
-    <!-- Filtros -->
     <div class="filtros">
       <input type="text" id="filtro-persona" placeholder="Buscar por DNI o Apellido..." />
       <input type="date" id="filtro-fecha" />
       <button onclick="buscarVisitas()">Buscar</button>
       <button class="filtros-boton" onclick="location.href='../index.html'">Volver al inicio</button>
+      <button id="btn-exportar" style="display:none;" onclick="exportarPDF()">Exportar a PDF</button>
     </div>
-
-    <!-- Resultados -->
-    <div id="resultados">
-      <!-- Aquí se agregan las tarjetas por JS -->
-    </div>
+    
+    <div id="resultados"></div>
+    <div id="tabla-para-pdf" style="display: none;"></div>
   </div>
+  
   <script src="../js/buscar.js"></script>
+
+<!-- libreria para exportar el historial-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 </body>
 </html>

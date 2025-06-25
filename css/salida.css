@@ -7,6 +7,7 @@ body {
   justify-content: center; 
   align-items: center; 
   height: 100vh;
+  overflow: hidden;
 }
 
 .container {
@@ -44,7 +45,12 @@ input[type="time"] {
   font-size: 1rem;
 }
 
+a{
+  color:white;
+}
 button {
+  width: 100%;
+  margin:5px;
   padding: 12px;
   border-radius: 8px;
   border: none;
@@ -100,4 +106,25 @@ button:hover {
   height: 200px;
   bottom: -120px;
   right: 130px;
+}
+
+
+@media (max-width: 768px) {
+  .decor-top-left,
+  .decor-bottom-right {
+    width: 120px!important;
+    height: 120px!important;
+    }
+  .decor-bottom-right-2{
+    width: 120px!important;
+    height: 120px!important;
+    bottom:-60px!important;
+    right: 10px!important;
+  }
+  .decor-top-left-2{
+      width: 120px!important;
+      height: 120px!important;
+      top: -60px!important;
+      left: 10px!important;
+  }
 }

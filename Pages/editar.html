@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Editar Visita</title>
+<link rel="stylesheet" href="../css/editar.css" />
+</head>
+<body class="inicio-body">
+  <div class="inicio-box">
+      <h1>Editar Visita</h1>
+  <form id="form-editar">
+    <input type="hidden" id="ID" />
+    <label>Nombre: <input type="text" id="Nombre" required></label><br/>
+    <label>Apellido: <input type="text" id="Apellido" required></label><br/>
+    <label>DNI: <input type="text" id="DNI" required></label><br/>
+    <label>Persona Visitada: <input type="text" id="Persona_visitada"></label><br/>
+    <label>Motivo: <input type="text" id="Motivo"></label><br/>
+    <label>Fecha Ingreso: <input type="date" id="fecha_ingreso"></label><br/>
+    <label>Hora Ingreso: <input type="time" id="hora_ingreso"></label><br/>
+    <label>Fecha Salida: <input type="date" id="fecha_salida"></label><br/>
+    <label>Hora Salida: <input type="time" id="hora_salida"></label><br/>
+    <button type="submit">Guardar cambios</button>
+    <button type="button" onclick="window.location.href='../index.html'">Inicio</button>
+  </form>
+  </div>
+  
+
+<script src="../js/editar.js"></script>
+</body>
+</html>

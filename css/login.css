@@ -1,0 +1,58 @@
+.inicio-body {
+  background-color: rgb(216, 183, 206);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Bree Serif', serif;
+  margin: 0;
+}
+
+.inicio-box {
+  background-color: rgb(113, 99, 116);
+  border-radius: 20px;
+  padding: 40px 60px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 1000px;
+}
+
+h2 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-align: left;
+}
+button {
+  width: 100%;
+  margin:5px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(192, 163, 198);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(153, 122, 160);
+}
+
+@media (max-width: 768px) {
+  .inicio-box{
+width: 150px;
+height: 450px;
+  }
+}
