@@ -4,9 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Editar Visita</title>
+<link rel="stylesheet" href="../css/editar.css" />
 </head>
-<body>
-  <h1>Editar Visita</h1>
+<body class="inicio-body">
+  <div class="inicio-box">
+      <h1>Editar Visita</h1>
   <form id="form-editar">
     <input type="hidden" id="ID" />
     <label>Nombre: <input type="text" id="Nombre" required></label><br/>
@@ -19,7 +21,10 @@
     <label>Fecha Salida: <input type="date" id="fecha_salida"></label><br/>
     <label>Hora Salida: <input type="time" id="hora_salida"></label><br/>
     <button type="submit">Guardar cambios</button>
+    <button type="button" onclick="window.location.href='../index.html'">Inicio</button>
   </form>
+  </div>
+  
 
 <script src="../js/editar.js"></script>
 </body>

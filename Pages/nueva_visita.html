@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro</title>
   <link rel="stylesheet" href="../css/nuevavisita.css">
-
   <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
 </head>
-
 <body>
   <script>
     const nombre = localStorage.getItem('nombre');
@@ -21,6 +18,7 @@
       window.location.href = "login.html";
     }
   </script>
+
   <div class="container">
     <h1>Registro</h1>
     <form action="../php/insertar_visitas.php" method="post" class="formulario">
@@ -48,22 +46,17 @@
         <label for="hora-ingreso">Hora de ingreso: </label>
         <input type="datetime-local" id="hora-ingreso" name="hora_ingreso" required>
       </div>
+
       <div class="botones">
         <button type="submit">Registrar visita</button>
-        <button >
-          <a href="../index.html" >Inicio</a>
-        </button>
-         
+        <button type="button" onclick="window.location.href='../index.html'">Inicio</button>
       </div>
     </form>
-
-    
   </div>
+
   <div class="decor decor-top-left"></div>
-<div class="decor decor-top-left-2"></div>
-
-<div class="decor decor-bottom-right"></div>
-<div class="decor decor-bottom-right-2"></div>
+  <div class="decor decor-top-left-2"></div>
+  <div class="decor decor-bottom-right"></div>
+  <div class="decor decor-bottom-right-2"></div>
 </body>
-
 </html>

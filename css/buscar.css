@@ -156,3 +156,29 @@ h1 {
 }
 
 
+@media (max-width: 768px) {
+  .decor-top-left,
+  .decor-bottom-right {
+    width: 120px!important;
+    height: 120px!important;
+    }
+  .decor-bottom-right-2{
+    width: 120px!important;
+    height: 120px!important;
+    bottom:-60px!important;
+    right: 10px!important;
+  }
+  .decor-top-left-2{
+      width: 120px!important;
+      height: 120px!important;
+      top: -60px!important;
+      left: 10px!important;
+  }
+  .decor-top-left-3{
+    width: 120px!important;
+      height: 120px!important;
+      top: -55px!important;
+      left: 5px!important;
+  }
+}
+

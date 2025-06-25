@@ -32,12 +32,17 @@
       <input type="date" id="filtro-fecha" />
       <button onclick="buscarVisitas()">Buscar</button>
       <button class="filtros-boton" onclick="location.href='../index.html'">Volver al inicio</button>
+      <button id="btn-exportar" style="display:none;" onclick="exportarPDF()">Exportar a PDF</button>
     </div>
-
-    <div id="resultados">
-      
-    </div>
+    
+    <div id="resultados"></div>
+    <div id="tabla-para-pdf" style="display: none;"></div>
   </div>
+  
   <script src="../js/buscar.js"></script>
+
+<!-- libreria para exportar el historial-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 </body>
 </html>
